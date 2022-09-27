@@ -9,4 +9,8 @@ return [
     ],
 
     'extensions' => [],
+    
+    'path' => '/api',
+    
+    'version' => '0.0.1',
 ];
