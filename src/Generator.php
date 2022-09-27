@@ -35,7 +35,7 @@ class Generator
             ->map(fn (Route $route) => $this->routeToOperation($route))
             ->filter() // Closure based routes are filtered out for now, right here
             ->each(fn (Operation $operation) => $openApi->addPath(
-                Path::make(str_replace(config('scramble.path'), '', $operation->path))->addOperation($operation)
+                Path::make($operation->path)->addOperation($operation)
             ))
             ->toArray();
 
